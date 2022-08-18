@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 
-const ChatBody = ({ messages, typingStatus }) => {
+const ChatBody = ({ messages, lastMessageRef, typingStatus }) => {
   const navigate = useNavigate();
 
   const handleLeaveChat = () => {
@@ -43,6 +43,7 @@ const ChatBody = ({ messages, typingStatus }) => {
         <div className="message__status">
           <p>{typingStatus}</p>
         </div>
+        <div ref={lastMessageRef} />
       </div>
     </>
   );
